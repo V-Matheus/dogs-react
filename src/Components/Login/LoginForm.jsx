@@ -26,7 +26,8 @@ const LoginForm = () => {
     <section>
       <h1>Login</h1>
       <form action="" onSubmit={handleSubmit}>
-        <Input />
+        <Input label='Usuário' type='text' name='username'/>
+        <Input label='Senha' type='password' name='password'/>
         <button>Entrar</button>
       </form>
       <Link to="/login/criar">Cadastro</Link>

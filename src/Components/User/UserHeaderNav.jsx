@@ -10,11 +10,10 @@ import styles from './UserHeaderNav.module.css';
 const UserHeaderNav = () => {
   const [mobile, setMobile] = React.useState(null);
   const { userLogout } = React.useContext(UserContext);
-  const navigate = useNavigate();
-
-
+  const navigate = useNavigate();  
+  
   function handleLogout() {
-    userLogout()
+    userLogout();
     navigate('/login');
   }
   return (

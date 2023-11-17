@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './UserPhotoPost.module.css';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
+import Error from '../Helper/Error';
 import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
 import { PHOTO_POST } from '../../api';
@@ -39,8 +40,19 @@ const UserPhotoPost = () => {
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />
         <Input label="Idade" type="number" name="idade" {...idade} />
-        <input className={styles.file} type="file" name="img" id="img" onChange={handleImgChange} />
-        <Button>Enviar</Button>
+        <input
+          className={styles.file}
+          type="file"
+          name="img"
+          id="img"
+          onChange={handleImgChange}
+        />
+        {loading ? (
+          <Button disabled>Enviando...</Button>
+        ) : (
+          <Button>Enviar</Button>
+        )}
+        <Error error={error}/>
       </form>
       <div>
         {img.previw && (

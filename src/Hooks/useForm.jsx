@@ -11,6 +11,10 @@ const types = {
     menssage:
       'A senha precisa ter 1 caracter maísculo, 1 minúsculo e 1 digito. Com no mínimo 8 caracteres.',
   },
+  number: {
+    regex: /^\d+$/,
+    message: 'Utilize números apenas.'
+  }
 };
 
 const useForm = (type) => {

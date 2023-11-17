@@ -12,31 +12,41 @@ const UserHeaderNav = () => {
   const { userLogout } = React.useContext(UserContext);
   const navigate = useNavigate();
   const mobile = useMedia('(max-width: 40rem)');
-  console.log(mobile);
+  const [mobileMenu, setMobileMenu] = React.useState(false);
 
   function handleLogout() {
     userLogout();
     navigate('/login');
   }
   return (
-    <nav className={styles.nav}>
-      <NavLink to="/conta" end>
-        <MinhasFotos />
-        {mobile && 'Minhas fotos'}
-      </NavLink>
-      <NavLink to="/conta/estatisticas">
-        <Estatisticas />
-        {mobile && 'Estatísticas'}
-      </NavLink>
-      <NavLink to="/conta/postar">
-        <AdicionarFoto />
-        {mobile && 'Adicionar Foto'}
-      </NavLink>
-      <button onClick={handleLogout}>
-        <Sair />
-        {mobile && 'Sair'}
-      </button>
-    </nav>
+    <>
+      {mobile && (
+        <button
+          aria-label="Menu"
+          className={styles.mobileButton}
+          onClick={() => setMobileMenu(!mobileMenu)}
+        ></button>
+      )}
+
+      <nav className={styles.nav}>
+        <NavLink to="/conta" end>
+          <MinhasFotos />
+          {mobile && 'Minhas fotos'}
+        </NavLink>
+        <NavLink to="/conta/estatisticas">
+          <Estatisticas />
+          {mobile && 'Estatísticas'}
+        </NavLink>
+        <NavLink to="/conta/postar">
+          <AdicionarFoto />
+          {mobile && 'Adicionar Foto'}
+        </NavLink>
+        <button onClick={handleLogout}>
+          <Sair />
+          {mobile && 'Sair'}
+        </button>
+      </nav>
+    </>
   );
 };
 

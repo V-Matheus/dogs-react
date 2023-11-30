@@ -6,7 +6,7 @@ import Error from '../Helper/Error';
 import Loading from '../Helper/Loading';
 import styles from './FeedPhotos.module.css';
 
-const FeedPhotos = ({ setmodalPhoto }) => {
+const FeedPhotos = ({ setModalPhoto }) => {
   const { data, loading, error, request } = useFetch();
 
   React.useEffect(() => {
@@ -27,7 +27,7 @@ const FeedPhotos = ({ setmodalPhoto }) => {
           <FeedPhotosItem
             key={photo.id}
             photo={photo}
-            setmodalPhoto={setmodalPhoto}
+            setModalPhoto={setModalPhoto}
           />
         ))}
       </ul>

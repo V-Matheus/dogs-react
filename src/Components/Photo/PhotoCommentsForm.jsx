@@ -10,8 +10,7 @@ const PhotoCommentsForm = ({ id }) => {
   async function handleSubmit(event) {
     event.preventDefault()
     const {url,options} = COMMENT_POST(id, {comment})
-    request(url,options)
-
+    await request(url,options)
   }
   return (
     <form onSubmit={handleSubmit}>

@@ -87,11 +87,11 @@ export function COMMENT_POST(id, body) {
     url: `${API_URL}/api/comment/${id}`,
     options: {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+      },
+      body: JSON.stringify(body),
     },
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + window.localStorage.getItem('token'),
-    },
-    body: JSON.stringify(body),
   };
 }

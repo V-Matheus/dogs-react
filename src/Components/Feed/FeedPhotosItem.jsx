@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './FeedPhotosItem.module.css'
+import { func } from 'prop-types'
  
 const FeedPhotosItem = ({photo, setModalPhoto}) => {
   function handleClick() {

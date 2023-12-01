@@ -1,9 +1,32 @@
-import React from 'react'
+import React from 'react';
+import styles from './PhotoContent.module.css';
+import { Link } from 'react-router-dom';
 
-const PhotoContent = ({data}) => {
+const PhotoContent = ({ data }) => {
+  const { photo, comments } = data;
   return (
-    <div>PhotoContent</div>
-  )
-}
+    <div className={styles.photo}>
+      <div className={styles.img}>
+        <img src={photo.src} alt={photo.title} />
+        <div className={styles.details}>
+          <div>
+            <p>
+              <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+              <span className={styles.visualizacoes}>{photo.acessos}</span>
+            </p>
+            <h1 className='title'>
+              <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
+            </h1>
+            <ul className={styles.attributes}>
+              <li>{photo.peso} Kg</li>
+              <li>{photo.idade} Anos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <PhotoComments id={photo.id} comments={comments} />
+    </div>
+  );
+};
 
-export default PhotoContent
+export default PhotoContent;

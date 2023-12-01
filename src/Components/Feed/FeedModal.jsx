@@ -19,6 +19,7 @@ const FeedModal = ({photo}) => {
       {loading && <Loading />}
       {data && <PhotoContent data={data}/>}
       
+      
     </div>
   )
 }

@@ -13,7 +13,7 @@ const PhotoComments = (props) => {
           <b>{comment.comment_author}: <span>{comment.comment_content}</span></b>
         </li>)}
       </ul>
-      {login && <PhotoCommentsForm id={props.id} />}
+      {login && <PhotoCommentsForm id={props.id} setComments={setComments}/>}
     </>
   )
 }

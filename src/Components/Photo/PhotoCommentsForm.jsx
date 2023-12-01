@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { COMMENT_POST } from '../../Api';
 import { ReactComponent as Enviar } from '../../Assets/enviar.svg';
 import useFetch from '../../Hooks/useFetch';
 

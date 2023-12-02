@@ -40,6 +40,7 @@ const Feed = ({ user }) => {
           user={user}
           page={page}
           setModalPhoto={setModalPhoto}
+          setInfinite={setInfinite}
         />
       ))}
     </div>

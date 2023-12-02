@@ -7,7 +7,6 @@ const FeedPhotosItem = ({ photo, setModalPhoto }) => {
   function handleClick() {
     setModalPhoto(photo);
   }
-  console.log(photo.src);
   return (
     <li className={styles.photo} onClick={handleClick}>
       <Image  src={photo.src} alt={photo.title} />

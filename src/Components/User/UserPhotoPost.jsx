@@ -5,7 +5,7 @@ import Button from '../Forms/Button';
 import Error from '../Helper/Error';
 import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
-import { PHOTO_POST } from '../../Api';
+import { PHOTO_POST } from '../../api';
 import { useNavigate } from 'react-router-dom';
 import Head from '../Helper/Head'
 

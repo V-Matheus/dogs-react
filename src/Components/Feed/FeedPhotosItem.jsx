@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './FeedPhotosItem.module.css';
-import { func } from 'prop-types';
 import Image from '../Helper/Image';
 
 const FeedPhotosItem = ({ photo, setModalPhoto }) => {

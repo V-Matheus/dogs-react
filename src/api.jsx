@@ -49,7 +49,7 @@ export function USER_POST(body) {
   };
 }
 
-export function PHOTO_POST(formData, token) {
+export function PHOTO_POST({ formData, token }) {
   return {
     url: API_URL + '/api/photo',
     options: {
@@ -145,4 +145,3 @@ export function STATS_GET() {
     },
   };
 }
-
